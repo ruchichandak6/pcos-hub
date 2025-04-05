@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PCOS Wellness Hub</title>
+
+  <!-- Bootstrap & Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #fff7f3;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url("background image.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      z-index: -1;
+    }
+
+    .navbar-brand-title {
+      font-size: 38px;
+      font-weight: bold;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 15px;
+    }
+
+    .section-title {
+      color: #cc3366;
+      margin-top: 40px;
+      font-weight: bold;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .quote-box {
+      background-color: #fcefe9;
+      border-left: 5px solid #ff9eaa;
+      padding: 20px;
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
+      border-radius: 12px;
+    }
+
+    .card-custom {
+      background-color: #fff0f5;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease-in-out;
+      border-radius: 15px;
+    }
+
+    .card-custom:hover {
+      transform: scale(1.05);
+    }
+
+    .main-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      animation: zoomIn 1s ease-in-out;
+    }
+
+    .info-intro {
+      background-color: #fff0f5;
+      border-left: 5px solid #cc3366;
+      font-size: 1.05rem;
+      padding: 20px;
+      height: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      animation: fadeInLeft 1s ease-in-out;
+    }
+
+    .btn-custom {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-custom:hover {
+      background-color: #cc3366 !important;
+      color: #fff !important;
+    }
+
+    footer {
+      background-color: #f9dce4;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .cause-box {
+      background-color: #fff0f5;
+      border-left: 5px solid #cc3366;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .cause-box:hover {
+      transform: scale(1.05);
+    }
+
+    .icon-box {
+      font-size: 50px;
+      margin-bottom: 10px;
+      color: #cc3366;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #cc3366;">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-title" href="#">🌸 PCOS Wellness Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="diet.html">Diet</a></li>
+          <li class="nav-item"><a class="nav-link" href="exercise.html">Exercise</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- IMAGE + CARD -->
+  <div class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 animate__animated animate__zoomIn">
+        <img src="logo image.jpg" alt="PCOS Banner" class="main-img" />
+      </div>
+      <div class="col-md-6">
+        <div class="info-intro animate__animated animate__fadeInLeft">
+          <h2 class="text-dark">💡 Let’s Talk Women’s Health</h2>
+          <p>Women’s health is gaining more attention, and PCOS & PCOD are common yet misunderstood conditions.</p>
+          <p>If you've ever wondered about PCOS and PCOD, this guide explains their differences, causes, and management strategies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container py-5">
+    <section>
+      <h2 class="section-title animate__animated animate__fadeInUp">What is PCOS and PCOD?</h2>
+      <h3>Understanding PCOS (Polycystic Ovary Syndrome)</h3>
+      <p>PCOS is a hormonal disorder causing ovarian cysts, irregular periods, and androgen overproduction, affecting overall health.</p>
+      <h3>What About PCOD (Polycystic Ovarian Disease)?</h3>
+      <p>PCOD results in enlarged ovaries due to immature egg release. It shares symptoms with PCOS but is generally less severe.</p>
+    </section>
+
+    <section>
+      <h3 class="section-title animate__animated animate__fadeInUp">What Causes PCOS and PCOD?</h3>
+      <p>The exact causes of polycystic ovaries aren’t fully understood, but several factors contribute to these conditions:</p>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="cause-box animate__animated animate__fadeInLeft">
+            <div class="icon-box"><i class="fas fa-dna"></i></div>
+            <h4>🧬 Hormonal Imbalance</h4>
+            <p>High levels of androgens disrupt ovulation, leading to ovarian cysts and irregular periods.</p>
+          </div>
+          <div class="cause-box animate__animated animate__fadeInLeft">
+            <div class="icon-box"><i class="fas fa-users"></i></div>
+            <h4>🧑‍🤝‍🧑 Genetics</h4>
+            <p>PCOS often runs in families, meaning your risk increases if a close relative has it.</p>
+          </div>
+          <div class="cause-box animate__animated animate__fadeInLeft">
+            <div class="icon-box"><i class="fas fa-utensils"></i></div>
+            <h4>🍽️ Lifestyle Factors</h4>
+            <p>Poor diet and lack of exercise contribute to insulin resistance, worsening PCOS symptoms.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="cause-box animate__animated animate__fadeInRight">
+            <div class="icon-box"><i class="fas fa-syringe"></i></div>
+            <h4>💉 Insulin Resistance</h4>
+            <p>High insulin levels trigger the ovaries to produce more androgens, leading to hormonal imbalances.</p>
+          </div>
+          <div class="cause-box animate__animated animate__fadeInRight">
+            <div class="icon-box"><i class="fas fa-fire"></i></div>
+            <h4>🔥 Inflammation</h4>
+            <p>Chronic low-grade inflammation can stimulate androgen production and worsen PCOS symptoms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section>
+      <h3 class="section-title animate__animated animate__fadeInUp">Why Diet & Exercise Matter</h3>
+<div class="row my-4">
+  <div class="col-md-6">
+    <div class="card card-custom text-center p-4 animate__animated animate__fadeInLeft">
+      <h4 class="highlight-heading">🥗 Diet for PCOS</h4>
+      <p>A balanced diet with fiber, lean protein, and healthy fats can regulate insulin and hormones.</p>
+      <a href="diet.html" class="btn btn-outline-success btn-custom">Explore Diet</a>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card card-custom text-center p-4 animate__animated animate__fadeInRight">
+      <h4 class="highlight-heading">🏋️ Exercise for PCOS</h4>
+      <p>Exercise supports hormone balance, metabolism, and stress reduction. It helps a lot in dealing with PCOD or PCOS</p>
+      <a href="exercise.html" class="btn btn-outline-primary btn-custom">Explore Exercise</a>
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    
+  </div>
+
+  <section class="container py-5 text-center">
+    <h3 class="section-title animate__animated animate__fadeInUp">Stay in the Loop 💌</h3>
+    <p>Get tips, recipes, and motivation straight to your inbox!</p>
+    <input type="email" placeholder="Enter your email" class="form-control d-inline w-50 mt-2" />
+    <button class="btn btn-custom mt-2" style="background-color: #cc3366; color: white;">Subscribe</button>
+  </section>
+  
+  <section class="container py-5 text-center">
+    <h3 class="section-title animate__animated animate__fadeInUp">Your Next Step 💪</h3>
+    <p>Explore your lifestyle plan – start with diet, movement. Wherever you begin, you're not alone.</p>
+    <a href="diet.html" class="btn btn-outline-success m-2">Start with Diet</a>
+    <a href="exercise.html" class="btn btn-outline-primary m-2">Start with Exercise</a>
+  </section>
+  
+  
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 PCOS Wellness Hub | Made with ❤️ for awareness and support
+  </footer>
+
+  <!-- Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

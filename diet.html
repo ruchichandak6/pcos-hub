@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FreshMeal - Weekly Planner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe9ec, #eafff5);
+      color: #3b3b3b;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.18;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(16px);
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      color: #d96c92;
+    }
+
+    .card {
+      border: none;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #fffefc, #ffe0e7);
+      box-shadow: 0 8px 20px rgba(255, 192, 203, 0.15);
+    }
+
+    .recipe-card img {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .btn-floating {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff95bc, #ffa751);
+      color: white;
+      font-size: 1.4rem;
+      border: none;
+    }
+
+    .list-group-item {
+      background: #fff7fa;
+      border-radius: 10px;
+      color: #6c3b52;
+    }
+
+    .btn-dark {
+      background: linear-gradient(135deg, #ffa5b2, #ffb347);
+      border: none;
+      color: white;
+    }
+
+    footer {
+      background: transparent;
+      color: #999;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">FreshMeal</a>
+      <div class="d-flex">
+        <button class="btn btn-outline-success me-2" onclick="scrollToPlanner()">Meals</button>
+        <button class="btn btn-outline-primary" onclick="scrollToGrocery()">Groceries</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero text-center">
+    <video autoplay muted loop id="bg-video">
+      <source src="./7889713-uhd_4096_2160_25fps.mp4" type="video/mp4"/>
+    </video>
+    <div class="glass">
+      <h1 class="display-5 fw-bold">FreshMeal</h1>
+      <p class="lead">Plan your week. Eat fresh. Shop smarter.</p>
+      <button class="btn btn-light mt-3" onclick="scrollToPlanner()">Start Planning</button>
+    </div>
+  </section>
+
+  <!-- Meals & Recipes Section -->
+  <section id="planner" class="container my-5">
+    <h2 class="text-center mb-4">Meals & Recipes</h2>
+    <div class="row g-4" id="recipe-section"></div>
+  </section>
+
+  <!-- Grocery List Section -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Your Grocery List</h2>
+    <ul id="grocery-list" class="list-group list-group-flush shadow-sm"></ul>
+    <div class="text-center mt-3">
+      <button class="btn btn-dark" onclick="downloadGroceryList()">Download Grocery List</button>
+    </div>
+  </section>
+  <section class="container py-5 text-center">
+    <h3 class="section-title animate__animated animate__fadeInUp">Your Next Step 💪</h3>
+    <p>Explore your lifestyle plan – start with movement. Wherever you begin, you're not alone.</p>
+    <a href="exercise.html" class="btn btn-outline-primary m-2">Start with Exercise</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Made with 💚 for fresh food lovers
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function scrollToPlanner() {
+      document.getElementById('planner').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToGrocery() {
+      document.getElementById('grocery-list').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function downloadGroceryList() {
+      const items = document.querySelectorAll('#grocery-list li');
+      let content = 'Grocery List:\n\n';
+      items.forEach(item => {
+        content += '- ' + item.textContent + '\n';
+      });
+
+      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'grocery-list.txt';
+      link.click();
+    }
+
+    const recipes = [
+      { title: "Green Detox Salad", desc: "Kale, cucumber, avocado, and lemon vinaigrette.", img: "green salad.jpg"},
+      { title: "Creamy Garlic Pasta", desc: "Quick creamy garlic pasta with herbs and cheese.", img: "creamy garlic pasta.jpg" },
+      { title: "Quinoa Power Bowl", desc: "Quinoa, chickpeas, carrots, spicy tahini drizzle.", img: "power bowl.png" },
+      { title: "Paneer Bhurji", desc: "Protein-rich and PCOS-friendly paneer dish.", img: "paneer-bhurji-recipe.jpg" },
+      { title: "Methi Thepla", desc: "Gujarati-style methi flatbread, rich in iron.", img: "Methi-Thepla-5.jpg" },
+      { title: "Moong Dal Chilla", desc: "Light, protein-packed pancakes made from moong dal.", img: "moong-dal-pancakes-500x500.jpg" },
+      { title: "Palak Tofu Curry", desc: "Spinach curry with tofu - iron and protein rich.", img: "palaktofucurry.jpg" },
+      { title: "Coconut Quinoa Kheer", desc: "Healthy dessert using quinoa and coconut milk.", img: "Coconut Quinoa Kheer.jpg" },
+      { title: "Vegetable Upma", desc: "Simple semolina dish with seasonal veggies.", img: "VegetableUpma.jpg" },
+      { title: "Besan Cheela", desc: "Chickpea flour pancake with onions & coriander.", img: "besancheela.jpg" },
+      { title: "Ragi Dosa", desc: "South Indian crepe made with ragi flour.", img: "ragidosa.jpg" },
+      { title: "Sprout Salad Bowl", desc: "Moong sprouts tossed with lemon, onion & tomato.", img: "sproutsaladbowl.jpg" }
+    ];
+
+    const recipeSection = document.getElementById("recipe-section");
+    recipes.forEach(r => {
+      const div = document.createElement("div");
+      div.className = "col-md-4 mb-4";
+      div.innerHTML = `
+        <div class="card recipe-card">
+          <img src="${r.img}" class="card-img-top" alt="${r.title}">
+          <div class="card-body">
+            <h5 class="card-title">${r.title}</h5>
+            <p class="card-text">${r.desc}</p>
+            <button class="btn btn-outline-dark w-100" onclick="addToGrocery('${r.title}')">Add Ingredients</button>
+          </div>
+        </div>
+      `;
+      recipeSection.appendChild(div);
+    });
+
+    function addToGrocery(recipeTitle) {
+      const ingredients = {
+        "Green Detox Salad": ["Kale", "Cucumber", "Avocado", "Lemon"],
+        "Creamy Garlic Pasta": ["Pasta", "Garlic", "Cheese", "Cream"],
+        "Quinoa Power Bowl": ["Quinoa", "Chickpeas", "Carrots", "Tahini"],
+        "Paneer Bhurji": ["Paneer", "Onions", "Tomatoes", "Spices"],
+        "Methi Thepla": ["Methi", "Wheat Flour", "Spices"],
+        "Moong Dal Chilla": ["Moong Dal", "Ginger", "Green Chili"],
+        "Palak Tofu Curry": ["Spinach", "Tofu", "Onion", "Tomato"],
+        "Coconut Quinoa Kheer": ["Quinoa", "Coconut Milk", "Jaggery"],
+        "Vegetable Upma": ["Semolina", "Carrot", "Peas", "Onion"],
+        "Besan Cheela": ["Besan", "Onion", "Coriander"],
+        "Ragi Dosa": ["Ragi Flour", "Rice Flour", "Curd"],
+        "Sprout Salad Bowl": ["Sprouts", "Onion", "Tomato", "Lemon"]
+      };
+
+      const list = document.getElementById("grocery-list");
+      ingredients[recipeTitle].forEach(item => {
+        const li = document.createElement("li");
+        li.className = "list-group-item";
+        li.textContent = item;
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>

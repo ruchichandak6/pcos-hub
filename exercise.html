@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PCOS Wellness - Exercise</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+    .navbar {
+      background-color: #cc3366;
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+      font-weight: 600;
+    }
+    .header {
+      background-color: #ffc0cb;
+      padding: 2rem 0;
+      text-align: center;
+      color: #fff;
+      border-radius: 0 0 20px 20px;
+    }
+    .exercise-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .exercise-card:hover {
+      transform: scale(1.03);
+    }
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #ffe4e1;
+      color: #d63384;
+    }
+    .footer {
+      background-color: #ffb6c1;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      color: white;
+    }
+    .video-carousel-section {
+      background-color: #ffeef4;
+      padding: 3rem 1rem;
+    }
+    .video-carousel-section h2 {
+      text-align: center;
+      color: #d63384;
+      margin-bottom: 2rem;
+    }
+    .carousel-item iframe {
+      width: 100%;
+      height: 700px;
+      border-radius: 15px;
+    }
+    @media (max-width: 768px) {
+      .carousel-item iframe {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">PCOS Wellbeing</a>
+    <div>
+      <a class="nav-link" href="index.html">Home</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="header">
+  <h1>Exercise for PCOS</h1>
+  <p>Gentle movement, powerful impact 💪</p>
+</div>
+
+<!-- Exercise Section -->
+<div class="container mt-5">
+  <div class="row g-4">
+
+    <!-- Card 1 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card exercise-card">
+        <img src="./yoga.jpg" class="card-img-top" alt="Yoga">
+        <div class="card-body">
+          <h5 class="card-title">Yoga</h5>
+          <p class="card-text">Boosts hormone balance, reduces stress and improves flexibility.</p>
+
+          <div class="accordion" id="accordionYoga">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingYoga">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseYoga">
+                  Learn More
+                </button>
+              </h2>
+              <div id="collapseYoga" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Try poses like Child's Pose, Cat-Cow, and Cobra. Practice 3–4 times a week for best results.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card exercise-card">
+        <img src="./cardio.jpg" class="card-img-top" alt="Cardio">
+        <div class="card-body">
+          <h5 class="card-title">Cardio</h5>
+          <p class="card-text">Improves insulin sensitivity and helps with weight management.</p>
+
+          <div class="accordion" id="accordionCardio">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingCardio">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCardio">
+                  Learn More
+                </button>
+              </h2>
+              <div id="collapseCardio" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Include brisk walking, cycling, or dancing for 30 minutes, 4–5 times a week.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card exercise-card">
+        <img src="./strength.jpg" class="card-img-top" alt="Strength Training">
+        <div class="card-body">
+          <h5 class="card-title">Strength Training</h5>
+          <p class="card-text">Builds muscle and supports metabolism, crucial for PCOS health.</p>
+
+          <div class="accordion" id="accordionStrength">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingStrength">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStrength">
+                  Learn More
+                </button>
+              </h2>
+              <div id="collapseStrength" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Use light weights or body weight exercises like squats, lunges, and planks 2–3 times a week.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Video Carousel Section -->
+<section class="video-carousel-section mt-5">
+    <div class="container">
+      <h2>🎥 PCOS Workout Videos Carousel</h2>
+  
+      <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+  
+          <div class="carousel-item active">
+            <iframe src="https://www.youtube.com/embed/C2RAjUEAoLI" title="Yoga for Hormone Balance" allowfullscreen></iframe>
+          </div>
+  
+          <div class="carousel-item">
+            <iframe src="https://www.youtube.com/embed/a-V4Or5xyis" title="PCOS Cardio Routine" allowfullscreen></iframe>
+          </div>
+  
+          <div class="carousel-item">
+            <iframe src="https://www.youtube.com/embed/tj0o8aH9vJw" title="PCOS Full Body Workout" allowfullscreen></iframe>
+          </div>
+  
+        </div>
+  
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-5 text-center">
+    <h3 class="section-title animate__animated animate__fadeInUp">Your Next Step 💪</h3>
+    <p>Explore your lifestyle plan – start with diet, movement. Wherever you begin, you're not alone.</p>
+    <a href="diet.html" class="btn btn-outline-success m-2">Start with Diet</a>
+  </section>
+  
+
+<!-- Footer -->
+<div class="footer">
+  <p>© 2025 PCOS Wellbeing | Stay Active, Stay Happy 🌸</p>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
